@@ -9,4 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService  {
  
   constructor(private http: HttpClient) { }
+  getProductsType(type:string):Observable<any> {
+   return this.http.get(`${Environment.baseUrl}products/category?type=${type}`)
+  }
+
 }

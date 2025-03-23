@@ -1,0 +1,148 @@
+// Global styles for the carousel
+:host ::ng-deep {
+    .p-carousel-indicator-active .p-carousel-indicator-button {
+        background: var(--pink) !important;
+    }
+    .p-carousel-indicators {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .p-carousel-indicator-list {
+        flex: 0 0 calc(100% / 4); /* تقسيم المؤشرات إلى 4 */
+       
+        display: flex
+    ;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: var(--p-carousel-indicator-list-padding);
+        gap: var(--p-carousel-indicator-list-gap);
+        margin: 0;
+        list-style: none;
+    }
+    
+    .p-carousel-indicator.p-highlight {
+        background: var(--pink) !important;
+        width: 14px;
+        height: 14px;
+    }
+    
+    // Carousel container styling
+    .p-carousel {
+      .p-carousel-content {
+        .p-carousel-container {
+          .p-carousel-items-content {
+            .p-carousel-items-container {
+              .p-carousel-item {
+                padding: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    // Product card styling
+    .border {
+      &.border-surface {
+        border: 1px solid #f8f9fa;
+        border-radius: 8px;
+        height: 94%;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  
+    // Highlighted/active product card
+    .active-product {
+      background-color: #8a3ffc !important;
+      color: white;
+      
+      .font-medium, .font-semibold {
+        color: white;
+      }
+    }
+  
+    // Product image container
+    .relative {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      
+      img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background-color: white;
+        padding: 1rem;
+      }
+    }
+  
+    // Product title
+    .font-medium {
+      font-size: 1rem;
+    color: var(--pink);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  
+    // Product code and price
+    .flex {
+      display: flex;
+      
+      .font-semibold {
+        font-size: 1.25rem;
+        color: #333;
+      }
+    }
+  
+    // Color options dots
+    .color-options {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      margin: 0.5rem 0;
+      
+      .color-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        
+        &.green {
+          background-color: #4caf50;
+        }
+        
+        &.pink {
+          background-color: #e91e63;
+        }
+        
+        &.blue {
+          background-color: #2196f3;
+        }
+      }
+    }
+  
+    // Product code
+    .product-code {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+    }
+  
+    
+   
+  
+    // Price styling
+    .price {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--text-color);
+    }
+  }

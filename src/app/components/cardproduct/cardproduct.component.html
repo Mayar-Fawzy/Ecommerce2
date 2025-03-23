@@ -1,0 +1,47 @@
+<p-carousel class="container"
+  [value]="productsList"
+  [numVisible]="4"
+[numScroll]="1"
+  [circular]="true"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-product pTemplate="item">
+    <div class="border border-surface rounded-border m-2 p-4"
+      [ngClass]="{ 'active-product': product.isActive }">
+      
+      <div class="relative mx-auto">
+        <img [src]="product.image" [alt]="product.title" class="w-100 rounded-border" />
+
+        <!-- Action buttons -->
+        <div class="action-buttons">
+          <p-button icon="pi pi-shopping-cart" styleClass="p-button-rounded p-button-text"></p-button>
+          <p-button icon="pi pi-heart" styleClass="p-button-rounded p-button-text"></p-button>
+          <p-button icon="pi pi-search" styleClass="p-button-rounded p-button-text"></p-button>
+        </div>
+
+        <!-- Inventory status tag -->
+        <p-tag *ngIf="product.inventoryStatus"
+          [value]="product.inventoryStatus"
+          class="absolute"
+          [ngStyle]="{ 'left.px': 5, 'top.px': 5 }">
+        </p-tag>
+      </div>
+
+      <!-- Product title -->
+      <div class="mb-4 font-medium">{{ product.title | slice: 0:5 }}..</div>
+
+      <!-- Color options -->
+      <div class="color-options">
+        <span class="color-dot green"></span>
+        <span class="color-dot pink"></span>
+        <span class="color-dot blue"></span>
+      </div>
+
+      <!-- Product code -->
+      <div class="product-code">Model - {{ product.model }}</div>
+
+      <!-- Price -->
+      <div class="text-center price">${{ product.price }}</div>
+    </div>
+  </ng-template>
+</p-carousel>
