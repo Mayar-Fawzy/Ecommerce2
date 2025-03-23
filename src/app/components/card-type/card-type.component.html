@@ -1,0 +1,27 @@
+<div class="product-list">
+  <div class="card"  *ngFor="let product of filteredProducts" >
+  <div class="sale">sale</div>
+    <!-- صورة المنتج -->
+    <div class="card-image " >
+      <img [src]="product.image" alt="{{ product.brand }}" class="w-100" />
+
+      <!-- أزرار الإجراءات (تظهر عند تحويم المؤشر) -->
+      <div class="action-buttons">
+        <button><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+
+    <!-- تفاصيل المنتج -->
+    <div class="card-details">
+      <span class="product-name">{{ product.brand }}</span>
+      <div class="price-container">
+        <span class="current-price">${{ product.price }}</span>
+        <span class="discount-price">${{ product.discount }}</span>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+

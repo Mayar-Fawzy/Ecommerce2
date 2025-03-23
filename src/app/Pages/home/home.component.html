@@ -4,4 +4,18 @@
     <h1 class="center">Tv</h1>
 <app-card-tv></app-card-tv>
   </div>
+  
+</section>
+
+<section>
+  <div class="LatestProduct py-3">
+    <ul class="nav-links center m-0 p-0">
+      <li><a (click)="setCategory('tv')" [class.active]="selectedCategory === 'tv'">TV</a></li>
+      <li><a (click)="setCategory('audio')" [class.active]="selectedCategory === 'audio'">Audio</a></li>
+      <li><a (click)="setCategory('laptop')" [class.active]="selectedCategory === 'laptop'">Laptop</a></li>
+      <li><a (click)="setCategory('mobile')" [class.active]="selectedCategory === 'mobile'">Mobile</a></li>
+      <li><a (click)="setCategory('gaming')" [class.active]="selectedCategory === 'gaming'">Gaming</a></li>
+    </ul>
+    <app-card-type *ngIf="selectedCategory" [category]="selectedCategory"></app-card-type>
+  </div>
 </section>

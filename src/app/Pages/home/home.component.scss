@@ -10,3 +10,24 @@
 
     gap: 15px;
  }
+ .nav-links {
+   color: var(--text-color);
+   list-style: none;
+   display: flex;
+   gap: 12px;
+   margin-top: 33px;
+ }
+ .LatestProduct{
+    color: var(--text-color);
+  
+ }
+.active{
+   color: var(--pink);
+   cursor: pointer;
+   text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: var(--text-color);
+ cursor: pointer;
+}
