@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+// 🎨 Color Variables
+:root {
+    --bg-shade: #EEEFFB;
+    --grey-text: #1518753d;
+    --accent: #FB2E86;
+    --white: #ffffff;
+    --liner-bg: #F3F9FF;
+    --blue-gradient: #1fa2ff;
+    --pink-gradient: #f953c6;
+    --sky-blue-gradient: #00c6ff;
+    --mint-green-gradient: #36E6D5;
+    --ugsadug: #9F63B5;
+    --text-color: #151875;
+    --sky-blue: #00C1FE;
+    --section-hover: #2F1AC4;
+    --sale-tage-color: #3F509E;
+    --price-tag-color: #FB2448;
+    --violet: #7E33E0;
+    --sub-text-color: #F1F0FF;
+    --page-button-color: #8A8FB9;
+    --pink: #FB2E86;
+    --textcolor:#F1F1F1;
+    --box-shadow: -9px 18px 40px 0px #0000001A;
+    --font-famaily: "Lato", sans-serif;
+
+  }
+ 
+  @mixin text-style($size, $weight, $line-height) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+  }
+  @mixin flex($type,$align,$justify,$flexdirection:row){
+     display: $type;
+     align-items: $align;
+     justify-content: $justify;
+     flex-direction: $flexdirection;
+  }
+  .center{@include flex(flex,center,center ,row )}
+  
+  // 🌍 Global Styling
+  body {
+    background-color: var(--white);
+    font-family: var(--font-famaily);
+    color: var( --textcolor);
+    margin: 0;
+    padding: 0;
+}
+
+ 

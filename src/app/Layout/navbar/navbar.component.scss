@@ -1,0 +1,74 @@
+.header{
+    background-color: var(--violet) !important;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.info{
+    margin: 9px;
+    margin-left: 237px;
+}
+.logincart{
+    margin: 9px;
+    margin-right: 185px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 10px 20px;
+  }
+ 
+  .logo a {
+    color: var(--text-color);
+    font-style: bold;
+    margin-left: 195px;
+    font-size: 35px;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    color: var(--text-color);
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 279px;
+    border: 2px solid var(--page-button-color);
+    overflow: hidden;
+    background: #fff !important;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .search-btn {
+    background: var(--price-tag-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .search-btn:hover {
+    background: var(--price-tag-color);
+  }
+  
