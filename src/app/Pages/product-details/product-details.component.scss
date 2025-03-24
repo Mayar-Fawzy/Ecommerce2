@@ -64,3 +64,20 @@ h2 {
 .mt-4.d-flex {
   gap: 12px;
 }
+.likeFooter{
+  h2{
+    color: var(--text-color);
+    margin: 0;
+  }
+  background-color: #F9F8FE; 
+  padding: 50px 20px;
+  color: var(--text-color);
+}
+.likeFooterContainer{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
