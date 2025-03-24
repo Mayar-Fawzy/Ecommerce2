@@ -7,7 +7,7 @@
         <img [src]="product.image" alt="{{ product.brand }}" class="w-100" />
   
         <div class="action-buttons">
-          <button><i class="fa fa-shopping-cart"></i></button>
+          <button (click)="addToCart(product.id)" ><i class="fa fa-shopping-cart"></i></button>
         </div>
       </div>
   

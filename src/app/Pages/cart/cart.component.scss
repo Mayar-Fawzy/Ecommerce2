@@ -1,0 +1,158 @@
+
+  
+  /* General Styling */
+  .cart-container {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+  }
+  th{
+    color: var(--text-color);
+  }
+  .product-details {
+    display: flex;
+    flex-direction: column; /* يجعل كل العناصر تحت بعضها */
+    justify-content: center; /* يضمن التوسيط العمودي */
+  }
+  
+  .cooloor {
+    color: var(--pink);
+    margin: 0; /* يزيل أي مسافات زائدة */
+    padding-top: 4px; /* يعطي مسافة صغيرة بين النصوص */
+  }
+  /* Cart Title */
+  .cart-title {
+    font-family: var(--font-famaily);
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--text-color);
+    width: 22%;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .fw-boldd{
+    font-size: 24px;
+    color: var(--text-color);
+  }
+  
+  /* Table Styling */
+  .custom-table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .custom-table thead {
+    background: var(--bg-shade);
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .custom-table th, .custom-table td {
+    padding: 15px;
+    vertical-align: middle;
+  }
+  
+  .custom-table tbody tr {
+    border-bottom: 1px solid var(--grey-text);
+  }
+  tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: none;
+}
+.custom-table[_ngcontent-ng-c571014132] th[_ngcontent-ng-c571014132], .custom-table[_ngcontent-ng-c571014132] td[_ngcontent-ng-c571014132] {
+    padding: 15px 91px;
+    vertical-align: middle;
+}
+.price {
+    font-size: 23px;
+    color: var(--p-blue-900);
+}
+  /* Product Image */
+  .cart-image {
+    width: 147px;
+    height: 91px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+
+  .quantity-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* يضيف مسافة بين العناصر */
+    background: var(--white);
+    border-radius: 8px;
+    padding: 5px;
+  }
+  
+  .quantity-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* يضيف مسافة بين العناصر */
+    background: var(--white);
+    border-radius: 8px;
+    padding: 5px;
+  }
+  
+  .quantity-box button {
+    background: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .quantity-box button:hover {
+    background: var(--section-hover);
+    transform: scale(1.1);
+  }
+  
+  .cart-qty {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    border: 1px solid var(--page-button-color);
+    border-radius: 5px;
+    padding: 5px;
+    background: var(--sub-text-color);
+  }
+  
+  /* Buttons */
+  .clear-cart-btn {
+    background: var(--pink);
+    color: var(--white);
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .clear-cart-btn:hover {
+    background: var(--price-tag-color);
+  }
+  
+  .update-cart-btn {
+    background: var(--sky-blue);
+    color: var(--white);
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .update-cart-btn:hover {
+    background: var(--section-hover);
+  }
+  

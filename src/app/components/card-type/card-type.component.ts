@@ -63,4 +63,26 @@ export class CardTypeComponent implements OnInit, OnChanges {
     this.onSale[productId] = !this.onSale[productId];
     console.log(`🛒 المنتج [${productId}] حالته الآن: ${this.onSale[productId] ? '🎉 مُخفض!' : '🔙 غير مُخفض'}`);
   }
+  addToCart(productId: number) {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+    // البحث عن المنتج بواسطة الـ ID
+    let selectedProduct = this.products.find(p => p.id === productId);
+    
+    if (!selectedProduct) {
+      alert('❌ المنتج غير موجود!');
+      return;
+    }
+
+    // التحقق إذا كان المنتج مضافًا مسبقًا
+    const exists = cart.some((item: any) => item.id === productId);
+    
+    if (!exists) {
+      cart.push(selectedProduct); // إضافة المنتج
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('✅ تمت إضافة المنتج إلى السلة!');
+    } else {
+      alert('⚠️ المنتج مضاف مسبقًا!');
+    }
+  }
 }

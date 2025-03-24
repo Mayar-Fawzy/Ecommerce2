@@ -12,12 +12,7 @@
       <div class="relative mx-auto">
         <img [src]="product.image" [alt]="product.title" class="w-100 rounded-border" />
 
-        <!-- Action buttons -->
-        <div class="action-buttons">
-          <p-button icon="pi pi-shopping-cart" styleClass="p-button-rounded p-button-text"></p-button>
-          <p-button icon="pi pi-heart" styleClass="p-button-rounded p-button-text"></p-button>
-          <p-button icon="pi pi-search" styleClass="p-button-rounded p-button-text"></p-button>
-        </div>
+       
 
         <!-- Inventory status tag -->
         <p-tag *ngIf="product.inventoryStatus"
