@@ -1,3 +1,4 @@
+import { RoutingModule } from './../../core/Shared/Module/routing/routing.module';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
@@ -5,7 +6,7 @@ import { CutPipe } from '../../core/Pipes/cut.pipe';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, FormsModule, CutPipe],
+  imports: [CommonModule, FormsModule, CutPipe,RoutingModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })

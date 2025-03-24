@@ -10,6 +10,7 @@ import { OrderComponent } from './Pages/order/order.component';
 import { ProductDetailsComponent } from './Pages/product-details/product-details.component';
 import { RoutesComponent } from './routes/routes.component';
 import { ProductsComponent } from './Pages/products/products.component';
+import { TotalpriceComponent } from './Pages/totalprice/totalprice.component';
 
 export const routes: Routes = [
     { path: '', component: RoutesComponent,children:[
@@ -20,6 +21,7 @@ export const routes: Routes = [
         { path: 'products', title: 'Products', component: ProductsComponent },
         { path: 'productsdetails/:id', title: 'Product Details', component: ProductDetailsComponent },
         {path:'cart', title:'cart',component:CartComponent},
+        {path:'totalprice',title:'totalprice',component:TotalpriceComponent},
         {path:'order', title:'order',component:OrderComponent},
         { path: '**', component: NotfoundComponent } 
     ] }, 
