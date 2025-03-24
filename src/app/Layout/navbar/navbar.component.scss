@@ -76,7 +76,9 @@
     cursor: pointer;
     transition: 0.3s;
   }
-  
+  .active{
+    color: var(--pink) !important;
+  }
   .search-btn:hover {
     background: var(--price-tag-color);
   }

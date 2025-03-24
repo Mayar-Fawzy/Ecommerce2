@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RoutingModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
