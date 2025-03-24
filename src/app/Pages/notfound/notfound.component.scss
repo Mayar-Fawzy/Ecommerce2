@@ -1,0 +1,14 @@
+img {
+    display: block;
+    margin: 50px auto; // Centers the image
+    width: 90%; // Responsive size
+    max-width: 600px; // Ensures it doesn’t get too large
+    height: auto; // Maintain aspect ratio
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.05); // Slight zoom effect
+    }
+  }
+  
