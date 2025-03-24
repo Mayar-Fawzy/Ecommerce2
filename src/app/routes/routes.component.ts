@@ -10,5 +10,5 @@ import { NavbarComponent } from '../Layout/navbar/navbar.component';
   styleUrl: './routes.component.scss'
 })
 export class RoutesComponent {
-
+  searchText: string = '';
 }

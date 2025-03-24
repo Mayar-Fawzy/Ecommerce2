@@ -11,6 +11,7 @@ import { ProductsService } from '../../core/Services/products.service';
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
+  
   categories = [
     { category: 'tv', code: 'tv' },
     { category: 'audio', code: 'audio' },
@@ -35,15 +36,14 @@ export class ProductsComponent {
       return;
     }
 
-    this._ProductsService.getProductsType(this.selectedCategory.code)
-      .subscribe(
-        (res) => {
-          this.productss = res.products;
-          console.log(res.productss);
-        },
-        (err) => {
-          console.error('🚨 خطأ أثناء جلب البيانات:', err);
-        }
-      );
+    this._ProductsService.getProductsType(this.selectedCategory.code).subscribe(
+      (res) => {
+        this.productss = res.products;
+        console.log(res.productss);
+      },
+      (err) => {
+        console.error('🚨 خطأ أثناء جلب البيانات:', err);
+      }
+    );
   }
 }

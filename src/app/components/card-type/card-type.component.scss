@@ -136,6 +136,7 @@
   /* أزرار الإجراءات (سلة التسوق، المفضلة، التكبير) */
   .action-buttons {
     position: absolute;
+    z-index: 11;
     right: 70px;
     bottom: -5%;
     transform: translateY(-50%);
@@ -151,7 +152,7 @@
     }
     
     button {
-      
+      z-index: 11;
       width: 35px;
       height: 35px;
       border-radius: 50%;

@@ -12,7 +12,7 @@ import { ProductsService } from '../../core/Services/products.service';
 export class CardTypeComponent implements OnInit, OnChanges {
   @Input() category: string = '';
   @Input() productsPages: any[] = [];
-
+  searchText: string = ''; 
   private productsService = inject(ProductsService);
   products: any[] = [];
   errorMessage: string | null = null;
@@ -22,6 +22,7 @@ export class CardTypeComponent implements OnInit, OnChanges {
     if (this.category) {
       this.fetchProducts();
     }
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {

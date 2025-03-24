@@ -6,7 +6,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
-import { CutPipe } from '../../core/Pipes/cut.pipe'
 @Component({
   selector: 'app-card-tv',
   imports: [ButtonModule,TagModule,CommonModule,CarouselModule],
@@ -14,12 +13,6 @@ import { CutPipe } from '../../core/Pipes/cut.pipe'
   styleUrl: './card-tv.component.scss'
 })
 export class CardTvComponent {
-  totalDots: number = 4; // عدد النقاط ثابت
-
-
-
-  currentPage: number = 0;
-  
   
       public responsiveOptions = [
         { breakpoint: '1400px', numVisible: 4, numScroll: 1 },
@@ -28,6 +21,7 @@ export class CardTvComponent {
         { breakpoint: '575px', numVisible: 1, numScroll: 1 }
         ];
    public readonly _ProductsService=inject(ProductsService);
+  
       productsList:[]=[];
       ngOnInit(): void {
           this._ProductsService.getProductsType('tv').subscribe(res=>{
@@ -35,6 +29,7 @@ export class CardTvComponent {
               console.log(this.productsList);
             
           })
+      
       }
       getSeverity(status: string): "success" | "secondary" | "info" | "warn" | "danger" | "contrast" | undefined {
           switch (status.toLowerCase()) {
