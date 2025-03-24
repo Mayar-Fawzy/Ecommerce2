@@ -11,12 +11,13 @@ import { ProductDetailsComponent } from './Pages/product-details/product-details
 import { RoutesComponent } from './routes/routes.component';
 import { ProductsComponent } from './Pages/products/products.component';
 import { TotalpriceComponent } from './Pages/totalprice/totalprice.component';
+import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
     { path: '', component: RoutesComponent,children:[
         { path: 'login', title: 'Login', component: LoginComponent },
         {path:'register', title:'register',component:RegisterComponent},
-      
+        { path: 'search-popup', component: SearchComponent, outlet: 'popup' },
         { path: 'home', title: 'Home', component: HomeComponent },
         { path: 'products', title: 'Products', component: ProductsComponent },
         { path: 'productsdetails/:id', title: 'Product Details', component: ProductDetailsComponent },

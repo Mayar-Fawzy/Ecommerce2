@@ -1,0 +1,39 @@
+<div *ngIf="isPopupVisible">
+    <!-- Backdrop that closes popup when clicked -->
+    <div class="popup-backdrop" (click)="closePopup()"></div>
+    
+    <!-- Popup Container -->
+    <div class="popup">
+      <!-- Header -->
+      <h3>Search Results</h3>
+      <p>Keyword: <strong>{{ searchTerm }}</strong></p>
+      
+      <!-- Products Grid -->
+      <div *ngIf="filteredProducts.length > 0; else noResults" class="products-grid">
+        <!-- Product Cards - Each will close popup when clicked -->
+        <div [routerLink]="['/productsdetails', product.id]" 
+             *ngFor="let product of filteredProducts" 
+             class="product-card"
+             (click)="closePopup()">
+          <div class="product-image-container">
+            <img [src]="product.thumbnail" [alt]="product.title" class="product-image">
+          </div>
+          <div class="product-details">
+            <h4 class="product-title">{{ product.title | cut:2 }}</h4>
+            <p class="product-brand">Brand: {{ product.brand }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- No Results Template -->
+      <ng-template #noResults>
+        <p class="no-results">No products found matching your search.</p>
+      </ng-template>
+      
+      <!-- Close Button -->
+      <button (click)="closePopup()">
+        <i class="fas fa-times" style="margin-right: 8px;"></i>
+        CLOSE
+      </button>
+    </div>
+  </div>

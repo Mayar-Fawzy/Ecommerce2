@@ -20,9 +20,16 @@
     <li><a routerLinkActive="active" routerLink="/cart">Cart</a></li>
   </ul>
   <div class="search-container">
-    <input type="text" placeholder="Search..." class="search-input" />
+    <input
+      type="text"
+      (input)="onSearch($event)"
+      placeholder="Search By Brand.."
+      class="search-input"
+    />
+
     <button class="search-btn">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
 </nav>
+<router-outlet name="popup"></router-outlet>
