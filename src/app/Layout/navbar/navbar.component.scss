@@ -58,13 +58,21 @@
     border: 1px;
     outline: none;
     font-size: 16px;
+    padding: 12px 15px;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    flex: 1;
+    outline: none;
+    font-size: 14px;
+    color: #666;
+    background-color: #fff;
   }
   
   .search-btn {
     background: var(--price-tag-color);
     color: white;
-    padding: 10px 15px;
-    border: none;
+    padding: 12px 15px;
+    border: 1px;
     cursor: pointer;
     transition: 0.3s;
   }
