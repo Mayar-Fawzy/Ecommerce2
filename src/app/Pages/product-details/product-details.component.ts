@@ -17,26 +17,14 @@ export class ProductDetailsComponent implements OnInit {
   private productService = inject(ProductsService);
 
   productDet: any;
-  images: any[] = [];
-  position: string = 'left';
-
-  responsiveOptions = [
-    { breakpoint: '1024px', numVisible: 5 },
-    { breakpoint: '768px', numVisible: 3 },
-    { breakpoint: '560px', numVisible: 1 }
-  ];
-
+ 
   ngOnInit(): void {
     const productId = this.route.snapshot.paramMap.get('id');
 
     if (productId) {
       this.productService.getProductById(productId).subscribe((res: any) => {
         this.productDet = res.product;
-
-        // 🖼️ إعداد الصور للمعرض
-        this.images = [
-          { itemImageSrc: this.productDet.image, thumbnailImageSrc: this.productDet.image }
-        ];
+       console.log(this.productDet.image);
       });
     }
   }

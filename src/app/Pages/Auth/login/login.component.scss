@@ -1,0 +1,112 @@
+:root {
+    --bg-shade: #EEEFFB;
+    --grey-text: #1518753d;
+    --accent: #FB2E86;
+    --white: #ffffff;
+    --text-color: #151875;
+    --box-shadow: -9px 18px 40px 0px #0000001A;
+    --font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-shade);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    padding: 18px;
+    margin: 47px 10px 32px 220px;
+    display: flex
+;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 544px;
+    height: 491px;
+}
+
+.login-box {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: var(--grey-text);
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid var(--grey-text);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    text-align: right;
+}
+
+button {
+    background: var(--accent);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--text-color);
+}
+
+.create-account {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.create-account a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.image-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 300px;
+}
+input {
+    background-color: var(--white);
+}
