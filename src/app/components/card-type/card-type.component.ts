@@ -1,13 +1,14 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../core/Services/products.service';
+import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 
 @Component({
   selector: 'app-card-type',
   templateUrl: './card-type.component.html',
   styleUrls: ['./card-type.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule,RoutingModule]
 })
 export class CardTypeComponent implements OnInit, OnChanges {
   @Input() category: string = '';
@@ -43,6 +44,7 @@ export class CardTypeComponent implements OnInit, OnChanges {
     this.productsService.getProductsType(this.category).subscribe({
       next: (res) => {
         this.products = res?.products.slice(0, 9) ?? [];
+        
         this.errorMessage = this.products.length ? null : '❌ No products found for this category.';
         this.onSale = {}; // إعادة تعيين التخفيض عند تغيير الفئة
         console.log('📦 المنتجات المحملة:', this.products);

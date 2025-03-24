@@ -12,5 +12,7 @@ export class ProductsService  {
   getProductsType(type:string):Observable<any> {
    return this.http.get(`${Environment.baseUrl}products/category?type=${type}`)
   }
-
+  getProductById(id:string){
+  return this.http.get(`${Environment.baseUrl}products/${id}`)
+  } 
 }

@@ -1,3 +1,4 @@
+import { RoutingModule } from './../../core/Shared/Module/routing/routing.module';
 import { Component, inject } from '@angular/core';
 import { Product } from '../../core/interfaces/Product';
 import { ProductsService } from '../../core/Services/products.service';
@@ -8,7 +9,7 @@ import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-card-tv',
-  imports: [ButtonModule,TagModule,CommonModule,CarouselModule],
+  imports: [ButtonModule,TagModule,CommonModule,CarouselModule,RoutingModule],
   templateUrl: './card-tv.component.html',
   styleUrl: './card-tv.component.scss'
 })

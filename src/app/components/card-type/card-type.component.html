@@ -1,22 +1,25 @@
 <div class="product-list">
   <div class="card" *ngFor="let product of products">
-    <div class="sale" *ngIf="product.discount > 0">Sale</div>
+    <div [routerLink]="['/productsdetails', product.id]">
+      <div class="sale"  *ngIf="product.discount > 0">Sale</div>
 
-    <div class="card-image">
-      <img [src]="product.image" alt="{{ product.brand }}" class="w-100" />
-
-      <div class="action-buttons">
-        <button><i class="fa fa-shopping-cart"></i></button>
+      <div class="card-image">
+        <img [src]="product.image" alt="{{ product.brand }}" class="w-100" />
+  
+        <div class="action-buttons">
+          <button><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+  
+      <div class="card-details">
+        <span class="product-name">{{ product.brand }}</span>
+  
+        <div class="price-container">
+          <span class="current-price">${{ product.price - product.discount }}</span>
+          <span class="discount-price" *ngIf="product.discount > 0">${{ product.price }}</span>
+        </div>
       </div>
     </div>
-
-    <div class="card-details">
-      <span class="product-name">{{ product.brand }}</span>
-
-      <div class="price-container">
-        <span class="current-price">${{ product.price - product.discount }}</span>
-        <span class="discount-price" *ngIf="product.discount > 0">${{ product.price }}</span>
-      </div>
-    </div>
+   
   </div>
 </div>

@@ -6,7 +6,7 @@
   [responsiveOptions]="responsiveOptions"
 >
   <ng-template let-product pTemplate="item">
-    <div class="border border-surface rounded-border m-2 p-4"
+    <div [routerLink]="['/productsdetails', product.id]"  class="border border-surface rounded-border m-2 p-4"
       [ngClass]="{ 'active-product': product.isActive }">
       
       <div class="relative mx-auto">

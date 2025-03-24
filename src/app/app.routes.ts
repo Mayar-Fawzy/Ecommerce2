@@ -18,7 +18,7 @@ export const routes: Routes = [
       
         { path: 'home', title: 'Home', component: HomeComponent },
         { path: 'products', title: 'Products', component: ProductsComponent },
-        { path: 'productsdetails', title: 'Product Details', component: ProductDetailsComponent },
+        { path: 'productsdetails/:id', title: 'Product Details', component: ProductDetailsComponent },
         {path:'cart', title:'cart',component:CartComponent},
         {path:'order', title:'order',component:OrderComponent},
         { path: '**', component: NotfoundComponent } 

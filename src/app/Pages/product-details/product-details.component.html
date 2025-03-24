@@ -1,1 +1,112 @@
-<p>product-details works!</p>
+<div class="container cardDetail my-5">
+  <div class="">
+    <div class="row g-5">
+      <!-- 📸 Image Section -->
+      <div class="col-md-6">
+        <img
+          [src]="productDet.image"
+          alt="{{ productDet.title }}"
+          class="img-fluid rounded"
+          style="max-height: 350px; object-fit: cover"
+        />
+      </div>
+
+      <!-- 🛍️ Product Info Section -->
+      <div class="col-md-6 Productdt">
+        <!-- Product Title -->
+    <h2 class="fw-bold mb-2" style="font-size: 28px; color: var(--text-color)">
+          {{ productDet.title | cut : 3 }}
+        </h2>
+
+        <!-- Rating -->
+        <div class="d-flex align-items-center mb-3">
+          <span class="text-warning me-2" style="font-size: 18px">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </span>
+        </div>
+
+        <!-- Price -->
+        <div class="d-flex align-items-center mb-4">
+          <span class="fw-bold me-3" style="font-size: 24px; color: #1f2937"
+            >${{ productDet.price - productDet.discount }}</span
+          >
+          <span
+            class="text-danger text-decoration-line-through"
+            style="font-size: 18px"
+            >${{ productDet.price }}</span
+          >
+        </div>
+
+        <!-- Description -->
+        <p class=" mb-4" style="font-size: 16px">
+          {{ productDet.description | cut : 12 }}
+        </p>
+
+        <!-- Color -->
+        <div class="mb-1">
+          <strong style="font-size: 19px">Color:</strong>
+          <span class="" style="font-size: 16px">
+            {{ productDet.color }}</span
+          >
+        </div>
+ <!-- Categories and Tags -->
+ <div class="mt-4 " style="font-size: 18px">
+  <p><strong>Categories:</strong> {{ productDet.category }}</p>
+</div>
+        <!-- Add to Cart Button -->
+        <button
+        class="btn  py-2 px-4 d-flex align-items-center justify-content-center gap-2 text-center"
+      >
+        Add To Cart
+      </button>
+      
+
+       
+
+        <!-- Social Sharing Icons -->
+        <div class="mt-4 d-flex align-items-center gap-3">
+          <span class="fw-semibold" style="font-size: 16px"
+            >Share:</span
+          >
+          <button
+            class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center"
+            style="
+              width: 32px;
+              height: 32px;
+              background-color: #f472b6;
+              border: none;
+            "
+          >
+            <i class="fa fa-share"></i>
+          </button>
+          <button
+            class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center"
+            style="
+              width: 32px;
+              height: 32px;
+              background-color: #3b82f6;
+              border: none;
+            "
+          >
+          <i class="fa-brands fa-facebook-f"></i>
+          </button>
+          <button
+            class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center"
+            style="
+              width: 32px;
+              height: 32px;
+              background-color: #60a5fa;
+              border: none;
+            "
+          >
+          <i class="fa-brands fa-twitter"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
