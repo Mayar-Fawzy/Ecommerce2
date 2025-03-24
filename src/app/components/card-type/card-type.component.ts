@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges, inject } from '@ang
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../core/Services/products.service';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-type',
@@ -14,6 +15,7 @@ export class CardTypeComponent implements OnInit, OnChanges {
   @Input() category: string = '';
   @Input() productsPages: any[] = [];
   searchText: string = ''; 
+  private _Router = inject(Router);
   private productsService = inject(ProductsService);
   products: any[] = [];
   errorMessage: string | null = null;
@@ -80,6 +82,7 @@ export class CardTypeComponent implements OnInit, OnChanges {
     if (!exists) {
       cart.push(selectedProduct); // إضافة المنتج
       localStorage.setItem('cart', JSON.stringify(cart));
+      this._Router.navigate(['/cart'])
       alert('✅ تمت إضافة المنتج إلى السلة!');
     } else {
       alert('⚠️ المنتج مضاف مسبقًا!');
