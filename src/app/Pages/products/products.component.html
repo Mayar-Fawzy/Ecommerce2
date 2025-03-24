@@ -1,12 +1,40 @@
 <section class="header">
-    <div class="infoheader">
-  <h1>Shop Grid Default</h1>
-  <h4 class="h6">Home.pages<span class="shopGrid">.Shop Grid Default</span></h4></div>
+  <div class="infoheader">
+    <h1>Shop Grid Default</h1>
+    <h4 class="h6">
+      Home.pages<span class="shopGrid">.Shop Grid Default</span>
+    </h4>
+  </div>
 </section>
+<section class="container">
+    <div class="d-flex justify-content-between my-2">
+        <div class="firstbar flex justify-between items-center">
+            <h3>Ecommerce Accessories & Fashion item</h3>
+            <p class="small">About 9,620 results (0.62 seconds)</p>
+        </div>
+        
+        <div class="secndbar d-flex">
+            <div class="pages d-flex align-items-center">
+                <h6 class="mr-2 mx-2">Per Page:</h6>
+                <p-select
+                    [options]="categories"
+                    [(ngModel)]="selectedCategory"
+                    (ngModelChange)="loadProducts()"
+                    optionLabel="category"
+                    placeholder="Select a Category"
+                    class="custom-select w-full h-auto md:w-56"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
 <section>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nemo nulla
-    id iusto provident earum vitae minus aliquam voluptates fugit odio eos
-    eligendi ducimus libero perspiciatis iure doloremque sint cum.
-  </p>
+    <section>
+        <app-card-type [category]="selectedCategory.code" [productsPages]="productss"></app-card-type>
+    </section>
+    
 </section>
+
+
+

@@ -11,32 +11,42 @@ import { ProductsService } from '../../core/Services/products.service';
 })
 export class CardTypeComponent implements OnInit, OnChanges {
   @Input() category: string = '';
+  @Input() productsPages: any[] = [];
+
   private productsService = inject(ProductsService);
   products: any[] = [];
   errorMessage: string | null = null;
+  onSale: { [key: string]: boolean } = {}; // تتبع حالة التخفيض لكل منتج
 
   ngOnInit(): void {
-    this.fetchProducts();
+    if (this.category) {
+      this.fetchProducts();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['category']?.currentValue !== changes['category']?.previousValue) {
+    if (changes['category'] && changes['category'].currentValue !== changes['category'].previousValue) {
+      console.log(`📢 تغيير الفئة إلى: ${this.category}`);
       this.fetchProducts();
     }
   }
 
   private fetchProducts(): void {
     if (!this.category) {
-      this.setError('Category is not specified.');
+      this.setError('⚠️ Category is not specified.');
       return;
     }
 
+    console.log(`📡 جلب المنتجات للفئة: ${this.category}`);
+
     this.productsService.getProductsType(this.category).subscribe({
       next: (res) => {
-        this.products = res?.products.slice(0,9) ?? [];
-        this.errorMessage = this.products.length ? null : 'No products found for this category.';
+        this.products = res?.products.slice(0, 9) ?? [];
+        this.errorMessage = this.products.length ? null : '❌ No products found for this category.';
+        this.onSale = {}; // إعادة تعيين التخفيض عند تغيير الفئة
+        console.log('📦 المنتجات المحملة:', this.products);
       },
-      error: () => this.setError('Error fetching products. Please try again later.')
+      error: () => this.setError('🚨 Error fetching products. Please try again later.')
     });
   }
 
@@ -46,15 +56,8 @@ export class CardTypeComponent implements OnInit, OnChanges {
     console.error(message);
   }
 
-  get filteredProducts() {
-    return this.products.filter(product => product.category === this.category);
-  }
-  onSale:boolean=true
-  toggleProductDetails(product: any): void {
-    // تبديل حالة التخفيض للمنتج المحدد
-    this.onSale = !this.onSale;
-    
-    // يمكنك هنا إضافة المزيد من المنطق مثل فتح صفحة تفاصيل المنتج
-    console.log('تم النقر على المنتج:', product);
+  toggleProductDetails(productId: string): void {
+    this.onSale[productId] = !this.onSale[productId];
+    console.log(`🛒 المنتج [${productId}] حالته الآن: ${this.onSale[productId] ? '🎉 مُخفض!' : '🔙 غير مُخفض'}`);
   }
 }
