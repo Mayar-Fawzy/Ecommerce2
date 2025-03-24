@@ -31,3 +31,51 @@ a{
   color: var(--text-color);
  cursor: pointer;
 }
+.btn{
+   background-color: var(--pink);
+   color: aliceblue
+}
+.support-section {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 40px 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // تخطيط شبكي متجاوب
+   gap: 30px; // المسافة بين الكروت
+   box-sizing: border-box;
+ 
+   .support-card {
+     background-color: #f8f9fa; // خلفية فاتحة كما في الصورة
+     border-radius: 12px;
+     padding: 20px;
+     text-align: center;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+     &:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     }
+ 
+     .support-icon {
+       width: 60px; // حجم الأيقونة
+       height: 60px;
+       margin-bottom: 15px;
+     }
+ 
+     h3 {
+       font-size: 18px;
+       font-weight: 600;
+       color: #1a2a6c; // لون أزرق داكن للعنوان
+       margin-bottom: 10px;
+       font-family: 'Poppins', sans-serif;
+     }
+ 
+     p {
+       font-size: 14px;
+       color: #666; // لون رمادي للنص
+       line-height: 1.5;
+       margin: 0;
+       font-family: 'Poppins', sans-serif;
+     }
+   }
+ }

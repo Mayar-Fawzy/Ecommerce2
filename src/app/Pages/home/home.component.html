@@ -17,5 +17,33 @@
       <li><a (click)="setCategory('gaming')" [class.active]="selectedCategory === 'gaming'">Gaming</a></li>
     </ul>
     <app-card-type *ngIf="selectedCategory" [category]="selectedCategory"></app-card-type>
+   <div class="center">
+    <button class="btn">Show ALL</button>
+   </div>
+    
+  </div>
+</section>
+<section>
+  <div class="support-section">
+    <div class="support-card">
+      <img src="/imges/free-delivery 1.svg"  alt="Free Shipping" class="support-icon" />
+      <h3>24/7 Support</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.</p>
+    </div>
+    <div class="support-card">
+      <img src="/imges/cashback 1.svg" alt="Money Back" class="support-icon" />
+      <h3>24/7 Support</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.</p>
+    </div>
+    <div class="support-card">
+      <img src="/imges/premium-quality 1.svg"  alt="Award" class="support-icon" />
+      <h3>24/7 Support</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.</p>
+    </div>
+    <div class="support-card">
+      <img src="/imges/24.svg" alt="Support" class="support-icon" />
+      <h3>24/7 Support</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.</p>
+    </div>
   </div>
 </section>
