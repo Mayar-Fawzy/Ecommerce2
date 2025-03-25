@@ -17,5 +17,8 @@ export class ProductsService  {
   }
   getProductById(id:string){
   return this.http.get(`${Environment.baseUrl}products/${id}`)
-  } 
+  }
+  pagination(page: number): Observable<any> {
+    return this.http.get(`${Environment.baseUrl}products?page=${page}`);}
+ 
 }

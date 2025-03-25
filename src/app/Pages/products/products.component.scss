@@ -38,3 +38,72 @@
 
 /* تخصيص قائمة الخيارات */
 
+.paginator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+  
+    .results-info {
+      color: var(--page-button-color);
+      font-size: 0.9rem;
+    }
+  }
+  
+  ::ng-deep .p-paginator {
+    background: transparent;
+    border: none;
+    padding: 0;
+  
+    .p-paginator-pages .p-paginator-page {
+      min-width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      margin: 0 0.25rem;
+      background: #F6F7FB;
+      color: #8A8FB9;
+      transition: all 0.3s;
+  
+      &:hover {
+        background: var(--pink);
+        color: white;
+      }
+  
+      &.p-highlight {
+        background: var(--pink);
+        color: white;
+      }
+    }
+  
+    .p-paginator-current {
+      color: var(--text-color);
+      font-weight: 600;
+      margin: 0 1rem;
+    }
+  }
+  .loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border-top-color: var(--pink);
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 0.5rem;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .paginator-container {
+    /* التنسيقات السابقة تبقى كما هي */
+    
+    ::ng-deep .p-paginator {
+      &[disabled] {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+    }
+  }
