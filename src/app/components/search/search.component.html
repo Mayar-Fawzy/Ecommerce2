@@ -16,7 +16,7 @@
              class="product-card"
              (click)="closePopup()">
           <div class="product-image-container">
-            <img [src]="product.thumbnail" [alt]="product.title" class="product-image">
+            <img [src]="product.image" [alt]="product.title" class="product-image">
           </div>
           <div class="product-details">
             <h4 class="product-title">{{ product.title | cut:2 }}</h4>
