@@ -1,233 +1,226 @@
 /* تنسيق قائمة المنتجات */
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-   
-  }
-  
-  /* تنسيق كارت المنتج */
-  .card {
-   
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    &:hover{
-      .sale{
-        
-     opacity: 1 !important;
-      }
-    }
-  }
-  .card {
-    position: relative;
-    /* باقي خصائص الكارد */
-  }
-  
-  .sale {
-    position: absolute;
-    top: 10px;       
-    left: -10px;     
-    z-index: 11;
-    width: auto;     
-    height: auto;     
-    color: white;
-    font-size: 16px; 
-    font-weight: 600;
-    text-transform: capitalize;
-    padding: 4px 20px 4px 15px;
-    background-color: #3f51b5;
-    transform: rotate(-8deg);    /* تقليل زاوية الدوران قليلاً */
-    transform-origin: left center;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    display: flex;      /* إضافة للتأكد من توسيط النص */
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* تنسيق كارت المنتج */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover .sale {
+  opacity: 1 !important;
+}
+
+.sale {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  z-index: 11;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px 20px 4px 15px;
+  background-color: #3f51b5;
+  transform: rotate(-8deg);
+  transform-origin: left center;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -10px;     /* تعديل موضع الانحناء */
-      width: 30px;      /* تقليل عرض الانحناء قليلاً */
-      height: 100%;
-      background-color: #3f51b5;
-      border-radius: 0 60% 60% 0 / 0 100% 100% 0;
-    }
-  }
-  /* تنسيق صورة المنتج */
-  .card-image {
-    position: relative;
-    height: 100%; width: 100%;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover img {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-  }
-  
-  .card-details {
-    padding: 14px;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-  }
-  
-  /* اسم المنتج */
-  .product-name {
-    font-size: 18px;
-    color: var(--text-color);
-    font-weight: 600;
-    margin-bottom: 10px;
-    position: relative;
-    display: inline-block;
-  }
+}
 
-  .product-name::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--page-button-color);
-    margin: 5px auto 0;
-    border-radius: 2px;
-  }
-  .price-container {
-  
-    flex-direction: row;
-    
-    gap: 10px;
-  }
-  .discount-price {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--pink);
-    margin-left: 15px;
-    text-decoration: line-through;
-  }
+.sale::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 30px;
+  height: 100%;
+  background-color: #3f51b5;
+  border-radius: 0 60% 60% 0 / 0 100% 100% 0;
+}
 
-  .current-price {
-    font-size: 16px;
-    font-weight: 600;
-   color: var(--text-color);
-  }
-  
- 
-  
-  /* أزرار الإجراءات (سلة التسوق، المفضلة، التكبير) */
-  .action-buttons {
-    position: absolute;
-    z-index: 11;
-    right: 70px;
-    bottom: -5%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    
-    .card:hover & {
-     
-      opacity: 1;
-    }
-    
-    button {
-      z-index: 11;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      background-color: white;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      
-      &:hover {
-        background-color: #f5f5f5;
-      }
-      
-      i {
-        font-size: 16px;
-        color:var(--text-color);
-      }
-    }
-  }
-  
-  /* رسالة الخطأ */
-  .error-message {
-    text-align: center;
-    color: #f44336;
-    padding: 20px;
-    font-size: 16px;
-  }
-  
-  /* رسالة عدم وجود منتجات */
-  .no-products {
-    text-align: center;
-    padding: 40px;
-    color: #757575;
-    font-size: 18px;
-  }
-  
-  /* تنسيق عنوان القسم */
-  .section-title {
-    font-size: 32px;
-    color: #1a237e;
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: 700;
-  }
-  
-  /* تنسيق التبويبات */
-  .product-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    
-    .tab {
-      padding: 8px 15px;
-      cursor: pointer;
-      position: relative;
-      color: #757575;
-      font-size: 16px;
-      
-      &.active {
-        color: #ff4081; /* اللون الوردي للتبويب النشط */
-        font-weight: 500;
-      }
-      
-      &.active::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: #ff4081;
-        border-radius: 3px;
-      }
-    }
-  }
+/* تنسيق صورة المنتج */
+.card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* Aspect ratio 4:3 */
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover img {
+  transform: scale(1.05);
+}
+
+/* تفاصيل المنتج */
+.card-details {
+  padding: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* اسم المنتج */
+.product-name {
+  font-size: 18px;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.product-name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--page-button-color);
+  margin: 5px auto 0;
+  border-radius: 2px;
+}
+
+/* السعر */
+.price-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.discount-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pink);
+  margin-left: 15px;
+  text-decoration: line-through;
+}
+
+.current-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* أزرار الإجراءات */
+.action-buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 11;
+}
+
+.card:hover .action-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-buttons button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons button:hover {
+  background-color: #f5f5f5;
+}
+
+.action-buttons i {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* رسالة الخطأ */
+.error-message {
+  text-align: center;
+  color: #f44336;
+  padding: 20px;
+  font-size: 16px;
+}
+
+/* لا توجد منتجات */
+.no-products {
+  text-align: center;
+  padding: 40px;
+  color: #757575;
+  font-size: 18px;
+}
+
+/* عنوان القسم */
+.section-title {
+  font-size: 32px;
+  color: #1a237e;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* التبويبات */
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.product-tabs .tab {
+  padding: 8px 15px;
+  cursor: pointer;
+  position: relative;
+  color: #757575;
+  font-size: 16px;
+}
+
+.product-tabs .tab.active {
+  color: #ff4081;
+  font-weight: 500;
+}
+
+.product-tabs .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff4081;
+  border-radius: 3px;
+}
